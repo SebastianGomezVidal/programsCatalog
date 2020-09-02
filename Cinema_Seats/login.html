@@ -1,0 +1,81 @@
+<html>
+<head>
+                <noscript>
+                        <style>
+                        body *{ /*hides all elements inside the body*/
+                                display: none;
+                                }
+
+                        #main_header{
+			        display: none;
+		        }
+                        h1{ /* even if this h1 is inside head tags it will be first hidden, so we have to display it again after all body elements are hidden*/
+			        display: block;
+				position: absolute;
+				top: 40%;
+				left: 20%;
+				padding: 0.5vw;
+				background: #311b92;
+				color: #ffc400;
+                                border-radius: 15px;
+                        }
+                        </style>
+                        <h1> JavaScript is not enabled, please check your browser settings. </h1>
+	        </noscript>      	
+        
+                <title>Theatry login</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+		<script   src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
+                <link rel="stylesheet" href="css/login.css"/>
+                <script src="js/login_validation.js"></script>
+                
+</head>
+
+<body style="background-image: url(img/cinema.png)">
+        
+        <div class="cookie-banner-log" style="visibility:visible">
+		<p>
+		<b>Like most websites Theatry uses cookies</b>. In order to deliver a personalised, responsive service
+		and to improve the site, we remeber and store information about how you use it. this is done using
+		simple text files called cookies which sit on your computer. These cookies are completely safe and secure
+		and will never contain any sensitive information. they are used only by Theatry or the trusted partners
+		we work with.
+    	<a href="https://www.termsfeed.com/blog/gdpr-compliance-plan/#Who_does_GDPR_apply_to/"> cookie policy </a>
+  		</p>
+		<button id="close" onclick="banner_button_login(this.id)">Accept & Close ></button>
+                </div>
+                
+        <h1 id="main_header"><img src="img/theater64.png" alt="theater"/> Theatry &copy;</h1>
+        
+        <div class="row">
+                
+                <div class="middle_content">
+        
+                        <nav class="float_table_menu_log col-3">
+                                <ul style="list-style-type: none;">
+                                        <img src="img/clapperboard.png" alt="Clapper board" style="margin: 0.5vw;">
+                                        <li><a id="log_main" onclick="pass_data(this.id)">Home</a></li>
+                                        <li><a id="log_signup" onclick="pass_data(this.id)">Sign up</a></li>
+                                </ul>        
+                        </nav>
+
+                        <div class="loginbox col-6">
+                                <div class="logininside">
+                                        <img src="img/login.png" id="avatar"/>
+                                        <h2 id="login_title">Theatry Login</h2>
+                                        <form name="login" id="login" method="post" action="https://localhost/Project2020/php/login.php" onsubmit="validate_login()">
+                                        <p>Email</p>
+			                <input type="text" name="email" id="email" placeholder="Enter Email">
+                                        <p>Passwword</p>
+                                        <input type="password" name="password" id="password" placeholder="Enter Password">
+                                        <input type="submit" name="submit" id="submit" value="Login">
+                                        <a id="log_signup" onclick="pass_data(this.id)">Create an Account ?</a>
+                                        </form>
+                                </div>
+                        </div>
+                </div>
+                        <div id="footer">© 2020 Juan Sebastian Gomez Vidal - Politecnico di Torino - Distributed Programming</div>
+        </div>
+</body>
+</html>

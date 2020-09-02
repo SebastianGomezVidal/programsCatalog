@@ -1,0 +1,85 @@
+<html>
+<head>
+                <noscript>
+                        <style>
+                        body *{ /*hides all elements inside the body*/
+                                display: none;
+                                }
+
+                        #main_header{
+			        display: none;
+		        }
+                        h1{ /* even if this h1 is inside head tags it will be first hidden, so we have to display it again after all body elements are hidden*/
+			        display: block;
+				position: absolute;
+				top: 40%;
+				left: 20%;
+				padding: 0.5vw;
+				background: #311b92;
+				color: #ffc400;
+                                border-radius: 15px;
+                        }
+                        </style>
+                        <h1> JavaScript is not enabled, please check your browser settings. </h1>
+	        </noscript>      	
+        
+                <title>Theatry Developer</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+		<script   src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
+                <link rel="stylesheet" href="css/developer.css"/>
+                <script src="js/developer.js"></script>'
+                
+                
+</head>
+
+<body style="background-image: url(img/cinema.png)">
+        
+        <div class="cookie-banner-dev" style="visibility:visible">
+		<p>
+		<b>Like most websites Theatry uses cookies</b>. In order to deliver a personalised, responsive service
+		and to improve the site, we remeber and store information about how you use it. this is done using
+		simple text files called cookies which sit on your computer. These cookies are completely safe and secure
+		and will never contain any sensitive information. they are used only by Theatry or the trusted partners
+		we work with.
+    	<a href="https://www.termsfeed.com/blog/gdpr-compliance-plan/#Who_does_GDPR_apply_to/"> cookie policy </a>
+  		</p>
+		<button id="close" onclick="banner_button_dev(this.id)">Accept & Close ></button>
+                </div>
+                
+        <h1 id="main_header"><img src="img/theater64.png" alt="theater"/> Theatry &copy;</h1>
+        
+        <div class="row">
+                
+                <div class="middle_content">
+        
+                        <nav class="float_table_menu_dev col-3">
+                                <ul style="list-style-type: none;">
+                                        <img id="brain" src="img/brain.png" alt="brain" style="margin: 0.5vw;">
+                                        <li><a id="log_main"    href="index.php">Home</a></li>
+                                        <li><a id="log_login"   href="login.html">Login</a></li>
+                                        <li><a id="log_signup"  href="sign_up.html">Sign up</a></li>
+                                        <li><a id="log_contact" href="contact.html">Contact me</a></li>
+                                </ul>        
+                        </nav>
+
+                        <div class="dev_inside col-5">
+                                        <h2>Juan Sebastian Gomez Vidal</h2>
+                                        <p>Electrical Engineer, specialist in Industrial Automation,
+                                        Who is currently pursuing a masters degree in Computer Engineering 
+                                        at the Politecnico di Torino, Italy. </p>
+                                        <p>Has worked in diverse industries
+                                        and in companies like Applus, Ericsson and Telefonica.</p>  
+                                        <p>Personal interest in the areas of Web programming, Machine Learning,
+                                        Artificial intelligence, Android and many more....  
+                                        </p>
+                        </div>
+
+                        <div class="dev_photo col-4">
+                                <img id="personal" src="img/personal-photo.jpg" alt="personal-photo" style="margin: 0.5vw;">
+                        </div>
+                </div>
+                        <div id="footer">© 2020 Juan Sebastian Gomez Vidal - Politecnico di Torino - Distributed Programming</div>
+        </div>
+</body>
+</html>
