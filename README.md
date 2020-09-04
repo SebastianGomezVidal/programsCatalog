@@ -11,6 +11,6 @@ So far, you can check the following projects:
 https://mybinder.org/v2/gh/SebastianGomezVidal/programsCatalog.git/master
 
 ## _Web Programming_
-### (Booking seats system for a Theater/Cinema)
+### (Seat booking system for a Theater/Cinema)
 
 ![Cinema Booking Finder Demo](Demo/cinema_booking_demo.gif)
