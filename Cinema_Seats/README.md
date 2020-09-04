@@ -7,7 +7,7 @@ what this app could do please refer to Project.md were all requirements are deta
 In order to run this page, you would need:
 
 1. ***XAMPP*** Which is a completely free, easy to install Apache distribution containing MariaDB, PHP, and Perl.
-This would allow you to simulate a server/client architecture in your computer.For further information refer to [xampp](https://www.apachefriends.org/index.html).
+This would allow you to simulate a server/client architecture in your computer. For further information refer to [xampp](https://www.apachefriends.org/index.html).
 
 2. Clone the Web Programming folder in XAMPP/htdocs/
 
