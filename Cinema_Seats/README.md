@@ -1,6 +1,5 @@
 # Prologue
-This web page was fully developed with XAMPP, PHP, JAVASCRIPT and AJAX. For a thorough understanding about
-what this app could do please refer to Project.md were all requirements are detailed. 
+This web page was fully developed with XAMPP, PHP, JAVASCRIPT, AJAX, HTML and CSS. For a thorough understanding about what this app could do please refer to Project.md were all requirements are detailed. 
 
 ## Things that you might need
 
@@ -30,6 +29,8 @@ take with any plain text reader, then click go.
 ![Cinema Booking Finder Demo](Demo/cinema_booking_demo.gif)
 
 ![Cinema Booking Finder Demo](Demo/cinema_booking_demo2.gif)
+
+![Cinema Booking DB](Demo/cinema_booking_db.gif)
 
 ## Further Work
 
