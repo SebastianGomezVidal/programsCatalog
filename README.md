@@ -10,3 +10,5 @@ So far, you can check the following projects:
 https://mybinder.org/v2/gh/SebastianGomezVidal/programsCatalog.git/master
 
 ## _Web Programming_(Booking system for a Theater)
+
+![Cinema Booking Finder Demo](DEMO/cinema_booking_demo.gif)
