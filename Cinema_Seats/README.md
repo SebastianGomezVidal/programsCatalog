@@ -17,7 +17,7 @@ This would allow you to simulate a server/client architecture in your computer. 
 5. In your new DB go to the SQL tab and paste the content (plain txt) of the file theater_manager.sql which you can
 take with any plain text reader, then click go.
 
-6. Make sure the connection parameters to the DB is right by checking the file _db_connection.php_ inside the php folder.
+6. Make sure the connection parameters to the DB are right by checking the file _db_connection.php_ inside the php folder.
 
 7. Finally go to [https://localhost/index.php](https://localhost/index.php), this app works under https.
 
