@@ -29,7 +29,7 @@ take with any plain text reader, then click go.
 
 ![Cinema Booking Finder Demo](Demo/cinema_booking_demo.gif)
 
-![Cinema Booking Finder Demo](Demo/cinema_booking_developer.gif)
+![Cinema Booking Finder Demo](Demo/cinema_booking_demo2.gif)
 
 ## Further Work
 
