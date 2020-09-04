@@ -34,7 +34,7 @@ take with any plain text reader, then click go.
 
 ## Further Work
 
-- Adapt the contact section according to your requirements, for gmail accounts extra code need to be developed.
+- Adapt the contact section according to your requirements, for gmail accounts extra code is needed.
 
 - In order to stop a same user to login multiple times, modify in sql the users table with a column when you could
 store a boolean or something similar that point-out whenever a user is logged in and modify the code in the
