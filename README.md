@@ -1,6 +1,6 @@
 # Programming Catalogue
 
-In this repository I would like to share different code related to the fields of Machine Learning, Artifitial Intelligence, Google Android studio, Web Programming and many more.... 
+In this repository I would like to share different code related to the fields of Machine Learning, Artifitial Intelligence, Android, Web Programming and many more.... 
 
 So far, you can check the following projects:
 
