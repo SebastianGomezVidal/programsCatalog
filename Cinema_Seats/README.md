@@ -1,11 +1,44 @@
-# ReadMe
+# Prologue
+This web page was fully developed with XAMPP, PHP, JAVASCRIPT and AJAX. For a thorough understanding about
+what this app could do please refer to Project.md were all requirements are detailed. 
 
-Build a simplified version of a website to manage seat reservations for a theatre show. For the sake of simplicity, consider only the reservations for a single show. The audience room of the theatre has a rectangular shape of dimensions 9x6 seats. These dimensions must be easily configurable by setting two PHP variables. The web site must satisfy the following requirements:
-1. In the main page of the web site the theatre map is shown to any visitor of the website, without authentication. In the map, different colors are used for the reserved seats (red) and the free ones (green). The user shall be able to select one or more free seats (green) by clicking on them. At each selection click, without reloading the page, the application must send a request to the server in order to check that the seat has not been reserved by someone else in the meanwhile. If the selected seat is still free, it must become yellow, which means selected, otherwise it must become red. It must be possible to de-select the selected seats, bringing them back to the green color (i.e. to the free status), with another click. The page must also show the total number of the seats, the number of those already reserved, the ones that are free and those currently selected by the user. These numbers must be updated consistently at each click of the user.
-2. The reservation operation must be enabled only through registration or authentication. This means that when a user presses the "Reserve" button in the main page, after having selected some seats, the server must be contacted in order to take the user to another page where the user can register, or authenticate with a previously registered email and password. The email is used as username. If registration or authentication is completed successfully, the operation must continue, attempting to carry out the reservation of the seats previously selected in the main page, taking the user back to the main page, both in case of success or failure, with the updated state of the seats and a message of confirmation or negation. The seats reserved by the user who is currently interacting with the web site are displayed with the orange color. From the main page it must be possible to reach the page of registration/authentication directly through a button, even without any attempt to reserve seats, in order to register/authenticate, if necessary, and visualize the reservations made previously, if any.
-3. Once registered or authenticated, a user must be able to return to the main page and continue to make additional reservations with the procedure described above, without having to register/authenticate again. The user can also decide to cancel a reservation by clicking on the proper orange seat (which becomes green). The server must be contacted, at each cancellation click, without reloading the page, in order to effectively the status of the seat in the server DB.
-4. In the project to be submitted, two users must already exist, u1@p.it u2@p.it, with password p1, p2, who have reserved, respectively, 9 and 6 seats, with no adjacency between seats of the two users.
-5. Authentication or registration by username and password must remain valid if no more than two minutes of user inactivity elapse. If the user requests an operation that requires registration/authentication after the deadline of 2 minutes since the previous page load, the operation does not have effect and the user is forced to re-authenticate with username and password. HTTPS is mandatory for the registration/authentication and in every part of the web site containing information related to a registered/authenitcated user only.
-6. The general layout of the web pages must contain: an header in the upper part, a navigation bar on the left side with links or buttons to carry out the possible operations and a central part which is used for the main operation.
-7. Cookies and Javascript must be enabled, otherwise the website may not work properly (in that case, for what concerns cookies, the user must be alerted and the website navigation must be forbidden, for what concerns Javascript the user must be informed). Forms should be provided with small informational messages in order to explain the meaning of the different fields. These messages may be put within the fields themselves or may appear when the mouse pointer is over them.
-8. The more uniform the views and the layouts are by varying the adopted browser, the better.
+## Things that you might need
+
+In order to run this page, you would need:
+
+1. ***XAMPP*** Which is a completely free, easy to install Apache distribution containing MariaDB, PHP, and Perl.
+This would allow you to simulate a server/client architecture in your computer
+
+For further information refer to [xampp](https://www.apachefriends.org/index.html)
+
+2. Clone the Web Programming folder in XAMPP/htdocs/
+
+3. Start all XAMPP services (SQL, APACHE, PROFTPD)
+
+4. go to [https://localhost/phpmyadmin/](https://localhost/phpmyadmin/) and create a DB (..like theater_manager)
+
+5. In your new DB go to the SQL tab and paste the content (plain txt) of the file theater_manager.sql which you can
+take with any plain text reader, then click go
+
+6. Make sure the connection parameters to the DB is right by checking the file _db_connection.php_ inside the php folder
+
+7. Finally go to [https://localhost/index.php](https://localhost/index.php), this app works under https
+
+8. Enjoy
+
+
+## What should the app do?
+
+![Cinema Booking Finder Demo](Demo/cinema_booking_demo.gif)
+
+![Cinema Booking Finder Demo](Demo/cinema_booking_developer.gif)
+
+## Further Work
+
+- Adapt the contact section according to your requirements, for gmail accounts extra code need to be developed.
+
+- In order to stop a same user to login multiple times, modify in sql the users table with a column when you could
+store a boolean or something similar than pin point you whenever a user is logged in and modify the code in the
+login.php and sign_up.php respectively.
+
+
