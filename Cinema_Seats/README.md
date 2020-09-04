@@ -1,5 +1,6 @@
 # Prologue
-This web page was fully developed with XAMPP, PHP, JAVASCRIPT, AJAX, HTML and CSS. For a thorough understanding about what this app could do please refer to Project.md were all requirements are detailed. 
+This web page was fully developed with XAMPP, PHP, JAVASCRIPT, AJAX, HTML and CSS. For a thorough understanding about what this app could do please refer to Project.md were all requirements are detailed. All tests were run under Safari web browser. 
+
 
 ## Things that you might need
 
