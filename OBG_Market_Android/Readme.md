@@ -29,19 +29,18 @@ In order to run this program, you would need to install (for MAC):
  
  ### Profile Creation
  
-  - Part 1
-  
-  ![p1](Demo/profile_1.gif)
-
-  - Part 2
-  
-  ![p2](Demo/profile_2.gif)
-
-  - Part 3
-  
-  ![p3](Demo/profile_3.gif)
-
-  - Part 4
-  
   ![p4](Demo/profile_4.gif)
+  
+ ### Creating an item for sell
+ 
+  ![i3](Demo/items_3.gif)
+  
+ ### Placing a buying intention (Buyer)
+ 
+ ![i3](Demo/buy_3.gif)
+ 
+ ### Picking a buyer (Seller)
+ 
+ ![confirmation](Demo/confirmation.gif)
+  
   
