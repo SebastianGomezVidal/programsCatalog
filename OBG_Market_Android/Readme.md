@@ -23,23 +23,13 @@ Also, it was used:
 
 ## Things that you might need
 
-In order to run this program, you would need to install (for MAC):
+In order to run this app, you need to:
 
-1. brew install node
+1. clone this project onto your PC
 
-2. brew install watchman
+2. run it on Android Studio
 
-3. npm install -g react-native-cli
-
-4. clone this project onto your PC
-
-5. from terminal locate the cloned project
-
-6. run react-native run-android
-
-7. For further information about how to run this app from terminal or how to configure the program for other OS visit [https://www.raywenderlich.com/247-react-native-tutorial-building-android-apps-with-javascript] (React Native Tutorial: Building Android Apps with JavaScript)
-
-8. Enjoy
+3. Enjoy
 
 ## What should this app do?
 
