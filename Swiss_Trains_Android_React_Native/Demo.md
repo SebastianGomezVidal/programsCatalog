@@ -27,6 +27,7 @@ In order to run this program, you would need to install (for MAC):
 - How does look the installion?
 
   - Part1
+  
   ![install 1](Demo/setup1.gif)
 
   - Part2
