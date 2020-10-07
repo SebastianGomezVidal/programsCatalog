@@ -26,8 +26,10 @@ In order to run this program, you would need to install (for MAC):
 
 - How does look the installion?
 
-![Cinema Booking Finder Demo](Demo/cinema_booking_demo.gif)
+![install 1](Demo/setup1.gif)
 
-![Cinema Booking Finder Demo](Demo/cinema_booking_demo2.gif)
+![install 2](Demo/setup2.gif)
 
-![Cinema Booking DB](Demo/cinema_booking_db.gif)
+![install 3](Demo/setup3.gif)
+
+![install 4](Demo/setup4.gif)
