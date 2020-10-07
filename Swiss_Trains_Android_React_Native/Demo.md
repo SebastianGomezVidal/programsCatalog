@@ -26,14 +26,14 @@ In order to run this program, you would need to install (for MAC):
 
 - How does look the installion?
 
--- Part1
-![install 1](Demo/setup1.gif)
+  - Part1
+  ![install 1](Demo/setup1.gif)
 
-* Part2
-![install 2](Demo/setup2.gif)
+  - Part2
+  ![install 2](Demo/setup2.gif)
 
-* Part3
-![install 3](Demo/setup3.gif)
+  - Part3
+  ![install 3](Demo/setup3.gif)
 
-* Part4
-![install 4](Demo/setup4.gif)
+  - Part4
+  ![install 4](Demo/setup4.gif)
