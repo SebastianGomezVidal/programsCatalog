@@ -13,7 +13,7 @@ In order to run this program, you would need to install (for MAC):
 
 4. from terminal locate the cloned project
 
-5. npm install -g react-native-cli (on the project's path)
+5. run npm install -g react-native-cli (on the project's path)
 
 6. run react-native run-android
 
