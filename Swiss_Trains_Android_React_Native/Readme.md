@@ -41,3 +41,5 @@ In order to run this program, you would need to install (for MAC):
   ![install 4](Demo/setup4.gif)
   
   ## What should this app do?
+  
+   ![Train search](Demo/train_search.gif)
