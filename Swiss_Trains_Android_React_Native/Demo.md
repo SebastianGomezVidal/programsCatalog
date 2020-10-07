@@ -17,12 +17,14 @@ In order to run this program, you would need to install (for MAC):
 
 6. run react-native run-android
 
-7. For further information on how to run an app from terminal or how to configure the program for other OS visit [https://www.raywenderlich.com/247-react-native-tutorial-building-android-apps-with-javascript] (React Native Tutorial: Building Android Apps with JavaScript).
+7. For further information about how to run an app from terminal or how to configure the program for other OS visit [https://www.raywenderlich.com/247-react-native-tutorial-building-android-apps-with-javascript] (React Native Tutorial: Building Android Apps with JavaScript)
 
-8. Enjoy.
+8. Enjoy
 
 
 ## What should the app do?
+
+- How does look the installion?
 
 ![Cinema Booking Finder Demo](Demo/cinema_booking_demo.gif)
 
