@@ -15,7 +15,7 @@ In order to run this program, you would need to install (for MAC):
 
 5. run npm install -g react-native-cli (on the project's path)
 
-6. run react-native run-android
+6. run react-native run-android (on the project's path)
 
 7. For further information about how to run this app from terminal or how to configure the program for other OS visit [https://www.raywenderlich.com/247-react-native-tutorial-building-android-apps-with-javascript] (React Native Tutorial: Building Android Apps with JavaScript)
 
