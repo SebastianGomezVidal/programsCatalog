@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/sebastian/AndroidStudioProjects/lab5/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ky/values-ky.xml",
+            "outputFile": "/Users/sebastian/Programming-Catalogue/Swiss_Trains_Android_React_Native/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ky/values-ky.xml",
             "map": [
                 {
                     "source": "/Users/sebastian/.gradle/caches/transforms-2/files-2.1/680f99f5a60980a4fb7a012e32eff12d/appcompat-1.1.0/res/values-ky/values-ky.xml",

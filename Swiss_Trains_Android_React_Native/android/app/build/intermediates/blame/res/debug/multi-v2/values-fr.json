@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/sebastian/AndroidStudioProjects/lab5/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fr/values-fr.xml",
+            "outputFile": "/Users/sebastian/Programming-Catalogue/Swiss_Trains_Android_React_Native/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fr/values-fr.xml",
             "map": [
                 {
                     "source": "/Users/sebastian/.gradle/caches/transforms-2/files-2.1/db66a303bf26c4c9c9ee589a595c808c/core-1.1.0/res/values-fr/values-fr.xml",

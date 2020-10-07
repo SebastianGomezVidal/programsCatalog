@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/sebastian/AndroidStudioProjects/lab5/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "/Users/sebastian/Programming-Catalogue/Swiss_Trains_Android_React_Native/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
                     "source": "/Users/sebastian/.gradle/caches/transforms-2/files-2.1/1c82f948fbe49c677ead6ef920fb3084/material-1.1.0/res/values-sw600dp-v13/values-sw600dp-v13.xml",
