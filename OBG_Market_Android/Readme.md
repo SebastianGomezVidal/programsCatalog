@@ -8,7 +8,7 @@ This project entails the creation of a second hand goods market on which people 
 - Create a list of interesting items for the future
 - Filter list of items according to type, location, etc
 - Choose to who you want to sell one of your items if you have more than one proposal
-- Get Notify (Whe you are sold one item)
+- Get Notify (Whe you are sold one item or when someone place a buying proposal)
 - Rate the app
 - Much more to come ....
 
