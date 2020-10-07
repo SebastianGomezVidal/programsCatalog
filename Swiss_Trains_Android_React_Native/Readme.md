@@ -9,17 +9,21 @@ In order to run this program, you would need to install (for MAC):
 
 2. brew install watchman
 
-3. npm install -g react-native-cli
+3. clone this project onto your PC
 
-4. clone this project onto your PC
+4. from terminal locate the cloned project
 
-5. from terminal locate the cloned project
+5. run npm install -g react-native-cli (on the project's path)
 
-6. run react-native run-android
+6. run react-native run-android (on the project's path)
 
-7. For further information about how to run this app from terminal or how to configure the program for other OS visit [https://www.raywenderlich.com/247-react-native-tutorial-building-android-apps-with-javascript] (React Native Tutorial: Building Android Apps with JavaScript)
+7. Enjoy
 
-8. Enjoy
+For further information about how to run this app from terminal or how to configure the program for other OS visit:
+[https://www.raywenderlich.com/247-react-native-tutorial-building-android-apps-with-javascript] 
+(React Native Tutorial: Building Android Apps with JavaScript)
+
+
 
 
 ## How does the installation look like?
