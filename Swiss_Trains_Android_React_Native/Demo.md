@@ -17,7 +17,7 @@ In order to run this program, you would need to install (for MAC):
 
 6. run react-native run-android
 
-7. For further information about how to run an app from terminal or how to configure the program for other OS visit [https://www.raywenderlich.com/247-react-native-tutorial-building-android-apps-with-javascript] (React Native Tutorial: Building Android Apps with JavaScript)
+7. For further information about how to run this app from terminal or how to configure the program for other OS visit [https://www.raywenderlich.com/247-react-native-tutorial-building-android-apps-with-javascript] (React Native Tutorial: Building Android Apps with JavaScript)
 
 8. Enjoy
 
@@ -41,3 +41,5 @@ In order to run this program, you would need to install (for MAC):
   - Part 4
   
   ![install 4](Demo/setup4.gif)
+  
+  ## What should this app do?
