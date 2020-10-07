@@ -21,25 +21,27 @@ In order to run this program, you would need to install (for MAC):
 
 8. Enjoy
 
+## What should this app do?
 
-## How does the installation look like?
-
+ ### Login
+  
+  ![Login](Demo/Login.gif)
+ 
+ ### Profile Creation
+ 
   - Part 1
   
-  ![install 1](Demo/setup1.gif)
+  ![p1](Demo/profile_1.gif)
 
   - Part 2
   
-  ![install 2](Demo/setup2.gif)
+  ![p2](Demo/profile_2.gif)
 
   - Part 3
   
-  ![install 3](Demo/setup3.gif)
+  ![p3](Demo/profile_3.gif)
 
   - Part 4
   
-  ![install 4](Demo/setup4.gif)
+  ![p4](Demo/profile_4.gif)
   
-  ## What should this app do?
-  
-   ![Train search](Demo/train_search.gif)
