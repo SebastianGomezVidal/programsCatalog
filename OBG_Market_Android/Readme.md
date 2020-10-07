@@ -37,9 +37,15 @@ In order to run this program, you would need to install (for MAC):
   
  ### Placing a buying intention (Buyer)
  
- ![i3](Demo/buy_3.gif)
+ ![i2](Demo/buy_2.gif)
  
  ### Picking a buyer (Seller)
+ 
+ ![i3](Demo/buy_3.gif)
+ 
+ ![i4](Demo/buy_4.gif)
+ 
+ ### Notifications
  
  ![confirmation](Demo/confirmation.gif)
   
