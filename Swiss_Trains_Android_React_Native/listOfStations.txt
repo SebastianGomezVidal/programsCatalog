@@ -1,0 +1,82 @@
+[
+	{
+		"coordinate": {"type": "WGS84", "x": 47.09838, "y": 6.825994}, 
+		"distance": null, 
+		"icon": "train", 
+		"id": "8504314", 
+		"name": "La Chaux-de-Fonds", 
+		"score": null
+	}, 
+	{
+		"coordinate": {"type": "WGS84", "x": 47.405783, "y": 8.404995}, 
+		"distance": null, 
+		"icon": "train", 
+		"id": "8503508", 
+		"name": "Dietikon", 
+		"score": null
+	}, 
+	{
+		"coordinate": {"type": "WGS84", "x": 46.54459, "y": 6.605007}, 
+		"distance": null, 
+		"icon": "train", 
+		"id": "8501164", 
+		"name": "Cery-Fleur-de-Lys", 
+		"score": null
+	}, 
+	{
+		"coordinate": {"type": "WGS84", "x": 46.98089, "y": 6.904842}, 
+		"distance": null, 
+		"icon": "train", 
+		"id": "8504509", 
+		"name": "NeuchÃ¢tel, Port-de-SerriÃ¨res", 
+		"score": null
+	}, 
+	{
+		"coordinate": {"type": "WGS84", "x": 47.36201, "y": 7.35008}, 
+		"distance": null, 
+		"icon": "train", 
+		"id": "8500109", 
+		"name": "DelÃ©mont", 
+		"score": null
+	}, 
+	{
+		"coordinate": {"type": "WGS84", "x": 47.420201, "y": 8.61928}, 
+		"distance": null, 
+		"icon": null, 
+		"id": "8503306", 
+		"name": "Dietlikon", 
+		"score": null
+	}, 
+	{
+		"coordinate": {"type": "WGS84", "x": 47.537169, "y": 7.608832}, 
+		"distance": null, 
+		"icon": "tram", 
+		"id": "8500096", 
+		"name": "Basel, Dreispitz", 
+		"score": null
+	}, 
+	{
+		"coordinate": {"type": "WGS84", "x": 47.570733, "y": 7.589829}, 
+		"distance": null, 
+		"icon": "tram", 
+		"id": "8588768", 
+		"name": "Basel, DreirosenbrÃ¼cke", 
+		"score": null
+	}, 
+	{
+		"coordinate": {"type": "WGS84", "x": 46.929974, "y": 7.562475}, 
+		"distance": null, 
+		"icon": null, 
+		"id": "8507063", 
+		"name": "Worb Dorf", 
+		"score": null
+	}, 
+	{
+		"coordinate": {"type": "WGS84", "x": 46.791465, "y": 9.820726},
+		"distance": null, 
+		"icon": "train", 
+		"id": "8509073", 
+		"name": "Davos Platz", 
+		"score": null
+	}
+]
