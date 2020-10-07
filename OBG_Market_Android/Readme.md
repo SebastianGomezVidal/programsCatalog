@@ -1,5 +1,25 @@
 # Prologue
-This web page was fully developed with Android React Native and was fully tested on Android devices. The page is about checking trains schedules based on a point of departure, arrival, date and time. the programg should present you the different existing routes between selected points and when choosing a specific one, it should list all the stations that you pass on this journey.
+This project entails the creation of a second hand goods market on which people can:
+
+- Create a user profile
+- Check seller profile
+- Place items for sell
+- Make a purchase intent for an item
+- Create a list of interesting items for the future
+- Filter list of items according to type, location, etc
+- Choose to who you want to sell one of your items if you have more than one proposal
+- Get Notify (Whe you are sold one item)
+- Rate the app
+- Much more to come ....
+
+Also, it was used:
+
+- Google services for authentication and geolocation
+- Firebase for the creation of a no relational database to hold data
+- MVVM approach
+- Databinding
+- Much more ....
+
 
 ## Things that you might need
 
@@ -42,8 +62,6 @@ In order to run this program, you would need to install (for MAC):
  ### Picking a buyer (Seller)
  
  ![i3](Demo/buy_3.gif)
- 
- ![i4](Demo/buy_4.gif)
  
  ### Notifications
  
