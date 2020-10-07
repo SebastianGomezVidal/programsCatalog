@@ -22,11 +22,11 @@
                     android:icon="@drawable/iconbought"
                     android:title="@string/nav_BoughtItemsListFragment"
                     android:checkable="true"/>
-                <!--<item
-                    android:id="@+id/nav_logOutFragment"
-                    android:icon="@drawable/logout"
+                <item
+                    android:id="@+id/nav_logOut"
+                    android:icon="@drawable/img_logout"
                     android:title="@string/menu_logOut"
-                    android:checkable="true"/>-->
+                    android:checkable="true"/>
             </menu>
         </item>
 
@@ -46,11 +46,6 @@
         </item>
         <item android:title="@string/nav_support">
             <menu>
-                <!--<item
-                    android:id="@+id/nav_help"
-                    android:icon="@android:drawable/ic_menu_help"
-                    android:title="@string/nav_help"
-                    android:checkable="true"/>-->
                 <item
                     android:id="@+id/nav_feedback"
                     android:icon="@android:drawable/sym_action_email"

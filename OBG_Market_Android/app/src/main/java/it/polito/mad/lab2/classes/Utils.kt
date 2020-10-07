@@ -6,9 +6,14 @@ import android.net.Uri
 import android.util.Log
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
+import android.widget.Toast
 import com.bumptech.glide.Glide
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
+import it.polito.mad.lab2.R
+import it.polito.mad.lab2.viewmodels.UserViewModel
 
 fun hideKeyboard(activity: Activity) {
     val inputMethodManager =
@@ -29,6 +34,25 @@ enum class ArrivesToEditItem{
 
 object Utils{
     lateinit var arrivesToEditItem:ArrivesToEditItem
+
+    @JvmStatic
+    fun closeApp(context: Context, userViewModel: UserViewModel) {
+
+        //Logout of the app
+
+        // Configure sign-in to request the user's ID, email address, and basic
+        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+        // Configure Google Sign In
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(context.getString(R.string.default_web_client_id)) //request a client token
+            .requestEmail()
+            .build()
+
+        userViewModel.mGoogleSignInClient = GoogleSignIn.getClient(context, gso)
+        userViewModel.mGoogleSignInClient.signOut()
+        userViewModel.auth.signOut()
+        Toast.makeText(context, "The App will close in 5 seconds", Toast.LENGTH_SHORT).show()
+    }
 }
 
 fun loadImageFromRemote(imgPath:String, ctx:Context, imgView:ImageView){
@@ -45,3 +69,4 @@ fun loadImageFromRemote(imgPath:String, ctx:Context, imgView:ImageView){
         .load(imageRef)
         .into(imgView)
 }
+

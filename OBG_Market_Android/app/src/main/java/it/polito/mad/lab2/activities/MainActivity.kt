@@ -44,26 +44,29 @@ import it.polito.mad.lab2.viewmodels.ItemsViewModel
 import it.polito.mad.lab2.viewmodels.OnSaleItemsViewModel
 import it.polito.mad.lab2.viewmodels.UserViewModel
 import java.lang.Exception
-
+import java.util.*
+import kotlin.concurrent.timerTask
 
 
 class MainActivity : AppCompatActivity() {
 
+    /******************************
+     *  Class Variables
+     ******************************/
+
     private lateinit var appBarConfiguration: AppBarConfiguration
-
-    companion object {
-        public val SHARED_PREFS: String = "sharedPrefs"
-        private val RC_SIGN_IN:Int = 1000
-    }
-
     private val userViewModel: UserViewModel by viewModels()
-    private val itemsViewModel: ItemsViewModel by viewModels()
-    private val onSaleItemsViewModel:OnSaleItemsViewModel by viewModels()
+    private val RC_SIGN_IN = 1000
 
+    /******************************
+     *  LFC -> onCreate ()
+     ******************************/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        Log.e("Trace", "Entering activity onCreate")
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -85,41 +88,19 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        createNotificationChannel()
+        toolbar.setupWithNavController(navController, appBarConfiguration)
+        // This will handle back actions initiated by the the back arrow
+        // at the start of the toolbar.
+        toolbar.setNavigationOnClickListener {
+            // Handle the back button event and return to override
+            // the default behavior the same way as the OnBackPressedCallback.
+            // TODO(reason: handle custom back behavior here if desired.)
 
-        // Configure sign-in to request the user's ID, email address, and basic
-        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
-        // Configure Google Sign In
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id)) //request a client token
-            .requestEmail()
-            .build()
+            // If no custom behavior was handled perform the default action.
+            navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+        }
 
-        // Build a GoogleSignInClient with the options specified by gso.
-        userViewModel.mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-
-        //Get a shared instance of Firebase Auth
-        userViewModel.auth = FirebaseAuth.getInstance()
-
-        //handle the feedback navigation button
-        navView.setNavigationItemSelectedListener(object : NavigationView.OnNavigationItemSelectedListener {
-                override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
-                        val id: Int = menuItem.getItemId()
-                        //it's possible to do more actions on several items, if there is a large amount of items I prefer switch(){case} instead of if()
-                        if (id == R.id.nav_feedback) {
-                                //Toast.makeText(applicationContext, "FeedBack", Toast.LENGTH_SHORT).show()
-                                rateApp()
-                            }
-                        else{
-                                //This is for maintaining the behavior of the Navigation view
-                                NavigationUI.onNavDestinationSelected(menuItem, navController)
-                            }
-                        //This is for closing the drawer after acting on it
-                        drawerLayout.closeDrawer(GravityCompat.START)
-                        return true
-                   }
-            })
-
+        //Asking for user Permissions
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION) !=
             PackageManager.PERMISSION_GRANTED) {
@@ -133,7 +114,102 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        //Get a shared instance of Firebase Auth
+        userViewModel.auth = FirebaseAuth.getInstance()
+
+        // Configure sign-in to request the user's ID, email address, and basic
+        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+        // Configure Google Sign In
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id)) //request a client token
+            .requestEmail()
+            .build()
+
+        // Build a GoogleSignInClient with the options specified by gso.
+        userViewModel.mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
+        // Manually Handling the Logout and Feedback menu tab on click ()
+        navView.setNavigationItemSelectedListener { menuItem ->
+            //it's possible to do more actions on several items, if there is a large amount of items I prefer switch(){case} instead of if()
+            when (menuItem.itemId) {
+
+                R.id.nav_feedback -> {
+                    //If the floating menu Feedback option is pressed the rateApp() is called
+                    rateApp()
+                }
+
+                R.id.nav_logOut -> {
+                    //If the floating menu Logout option is pressed the Utils.closeApp() is called
+                    Utils.closeApp(applicationContext, userViewModel)
+                    Timer().schedule(timerTask { finish() }, 5000)
+                }
+                else -> {
+                    //This is for maintaining the behavior of the Navigation view
+                    NavigationUI.onNavDestinationSelected(menuItem, navController)
+                }
+            }
+            //This is for closing the drawer after acting on it
+            drawerLayout.closeDrawer(GravityCompat.START)
+            true
+        }
     }
+
+    /******************************
+     *  LFC -> onStart ()
+     ******************************/
+    //at the on start retrieve the current user and update the ui if the user is present!
+    override fun onStart() {
+        super.onStart()
+        createNotificationChannel()
+        // Check for existing Google Sign In account, if the user is already signed in
+        // the GoogleSignInAccount will be non-null.
+        val currentUser = userViewModel.auth.currentUser
+        updateUI(currentUser)
+    }
+
+    /******************************
+     *  LFC -> onResume ()
+     ******************************/
+
+    override fun onResume() {
+        super.onResume()
+        Log.e("Trace", "Entering activity onResume")
+    }
+
+    /******************************
+     *  LFC -> onPause ()
+     ******************************/
+    override fun onPause() {
+        super.onPause()
+        Log.e("Trace", "Entering activity onPause")
+    }
+
+    /******************************
+     *  LFC -> onStop ()
+     ******************************/
+    override fun onStop() {
+        super.onStop()
+        Log.e("Trace", "Entering activity onStop")
+    }
+
+    /******************************
+     *  LFC -> onDestroy ()
+     ******************************/
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("Trace", "Entering activity onDestroy")
+    }
+
+    /******************************
+     *  LFC -> onRestart ()
+     ******************************/
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.e("Trace", "Entering activity onRestart")
+    }
+
 
     //if the received account is null, the user is not logged and so it is show the dialog for signing in via the intent
     //otherwise the data are retrieved from the repository!
@@ -180,9 +256,13 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
 
-                override fun onDrawerClosed(drawerView: View) {}
+                override fun onDrawerClosed(drawerView: View) {
+                    // Void
+                }
 
-                override fun onDrawerOpened(drawerView: View) {}
+                override fun onDrawerOpened(drawerView: View) {
+                    // Void
+                }
 
             })
 
@@ -269,14 +349,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    //at the on start retrieve the current user and update the ui if the user is present!
-    override fun onStart() {
-        super.onStart()
-        // Check for existing Google Sign In account, if the user is already signed in
-        // the GoogleSignInAccount will be non-null.
-        val currentUser = userViewModel.auth.currentUser
-        updateUI(currentUser)
-    }
+
 
     private fun createNotificationChannel() {
         // Create the NotificationChannel, but only on API 26+ because
