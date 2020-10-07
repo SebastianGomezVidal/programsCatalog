@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menu_drawer_options"
+    tools:showIn="navigation_view">
+
+    <group>
+        <item android:title="@string/nav_user">
+            <menu>
+                <item
+                    android:id="@+id/nav_profile"
+                    android:icon="@drawable/user_profile"
+                    android:title="@string/nav_profile"
+                    android:checkable="true"/>
+                <item
+                    android:id="@+id/nav_adds"
+                    android:icon="@drawable/adds"
+                    android:title="@string/nav_adds"
+                    android:checkable="true"/>
+                <item
+                    android:id="@+id/nav_boughtItemsListFragment"
+                    android:icon="@drawable/iconbought"
+                    android:title="@string/nav_BoughtItemsListFragment"
+                    android:checkable="true"/>
+                <!--<item
+                    android:id="@+id/nav_logOutFragment"
+                    android:icon="@drawable/logout"
+                    android:title="@string/menu_logOut"
+                    android:checkable="true"/>-->
+            </menu>
+        </item>
+
+        <item android:title="@string/nav_advertisements">
+            <menu>
+                <item
+                    android:id="@+id/nav_itemOnSale"
+                    android:icon="@drawable/iconbuy"
+                    android:title="@string/nav_itemOnSale"
+                    android:checkable="true"/>
+                <item
+                    android:id="@+id/nav_itemOfInterestListFragment"
+                    android:icon="@drawable/landmark"
+                    android:title="@string/nav_itemOfInterestListFragment"
+                    android:checkable="true"/>
+            </menu>
+        </item>
+        <item android:title="@string/nav_support">
+            <menu>
+                <!--<item
+                    android:id="@+id/nav_help"
+                    android:icon="@android:drawable/ic_menu_help"
+                    android:title="@string/nav_help"
+                    android:checkable="true"/>-->
+                <item
+                    android:id="@+id/nav_feedback"
+                    android:icon="@android:drawable/sym_action_email"
+                    android:title="@string/nav_feedback"
+                    android:checkable="true"/>
+            </menu>
+        </item>
+
+    </group>
+</menu>

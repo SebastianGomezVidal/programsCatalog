@@ -1,0 +1,24 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=F4:3C:EB:67:C5:36:BC:6D:D0:AA:31:7D:B8:71:89:DC:73:ED:21:8B%3Bit.polito.mad.lab2.fragments
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    it.polito.mad.lab2.fragments
+
+    SHA-1 certificate fingerprint:
+    F4:3C:EB:67:C5:36:BC:6D:D0:AA:31:7D:B8:71:89:DC:73:ED:21:8B
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCbPZRGofhC0ukxlvsj9OxCP-mzgVY1C1A</string>
+</resources>

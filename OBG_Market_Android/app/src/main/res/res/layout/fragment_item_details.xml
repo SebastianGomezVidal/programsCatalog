@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="item"
+            type="it.polito.mad.lab2.viewmodels.ItemsViewModel"/>
+    </data>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ItemDetailsFragment"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        app:liftOnScroll="true"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:expandedTitleMarginStart="72dp"
+            app:expandedTitleMarginBottom="28dp"
+            app:title=" "
+            app:expandedTitleTextAppearance="@style/TextAppearance.App.CollapsingToolbar.Expanded"
+            app:collapsedTitleTextAppearance="@style/TextAppearance.App.CollapsingToolbar.Collapsed"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:contentScrim="?attr/colorPrimary"
+            app:statusBarScrim="?attr/colorPrimaryVariant">
+
+            <ImageView
+                android:id="@+id/itemDetailsImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="item image"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                android:src="@{item.imagePath_value}"
+                android:transitionName="transitionToDetails" />
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbarItemDetails"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:menu="@menu/top_app_bar_item_details"
+                app:navigationIcon="@drawable/back_arrow"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                android:elevation="0dp"
+                android:background="@android:color/transparent"
+                app:layout_collapseMode="pin"/>
+            <!-- app:title="@string/item_details_title" -->
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Note: A RecyclerView can also be used -->
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <!-- android:fillViewport="true" -->
+
+        <!-- Scrollable content -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTitle"
+                style="@style/addsTitleStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{item.title_value}"
+                app:layout_constraintBottom_toTopOf="@+id/tvCategory"
+                app:layout_constraintEnd_toStartOf="@+id/tvPrice"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/googleButtonShowItem" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvDescription"
+                style="@style/addsDescriptionStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{item.description_value}"
+                app:layout_constraintBottom_toTopOf="@+id/tvLocation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCategory" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPrice"
+                style="@style/addsPriceStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{item.price_value}"
+                app:layout_constraintBottom_toBottomOf="@+id/tvTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvTitle"
+                app:layout_constraintTop_toTopOf="@+id/tvTitle" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvCategory"
+                style="@style/addsCategoryStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{item.category_value}"
+                app:layout_constraintBottom_toTopOf="@+id/tvDescription"
+                app:layout_constraintEnd_toEndOf="@+id/tvTitle"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/tvTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvLocation"
+                style="@style/addsLocationStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{item.location_value}"
+                app:layout_constraintBottom_toTopOf="@+id/tvStatus"
+                app:layout_constraintEnd_toStartOf="@+id/tvExpiryDate"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvExpiryDate"
+                style="@style/addsExpireDateStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{item.expire_value}"
+                app:layout_constraintBottom_toBottomOf="@+id/tvLocation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvLocation"
+                app:layout_constraintTop_toTopOf="@+id/tvLocation" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvStatus"
+                style="@style/addsStatusStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Status"
+                app:layout_constraintBottom_toTopOf="@+id/itemOwner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLocation" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvInterestedUsers"
+                style="@style/addsLocationStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Interested Users"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnRateUser" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/itemOwner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#002995"
+                android:clickable="true"
+                android:text="@string/press_here_for_owner_info"
+                app:backgroundTint="#0B4F85"
+                app:layout_constraintBottom_toTopOf="@+id/btnRateUser"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvStatus" />
+
+            <ImageButton
+                android:id="@+id/googleButtonShowItem"
+                android:layout_width="43dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:background="@color/white"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/map" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRateUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#002995"
+                android:clickable="true"
+                android:text="@string/rate_the_seller"
+                app:backgroundTint="#0B4F85"
+                app:layout_constraintBottom_toTopOf="@+id/tvInterestedUsers"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/itemOwner" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_interested_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:backgroundTint="#1a237e"
+        android:elevation="10dp"
+        app:srcCompat="@drawable/ic_interested_empty"
+        app:tint="@android:color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_interested_full"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:backgroundTint="#1a237e"
+        android:elevation="10dp"
+        app:srcCompat="@drawable/ic_interested_full"
+        app:tint="@android:color/white" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

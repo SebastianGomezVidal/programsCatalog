@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="itemd"
+            type="it.polito.mad.lab2.viewmodels.ItemsViewModel"/>
+    </data>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ItemEditFragment"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        app:liftOnScroll="true"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:expandedTitleMarginStart="72dp"
+            app:expandedTitleMarginBottom="28dp"
+            app:title=" "
+            app:expandedTitleTextAppearance="@style/TextAppearance.App.CollapsingToolbar.Expanded"
+            app:collapsedTitleTextAppearance="@style/TextAppearance.App.CollapsingToolbar.Collapsed"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:contentScrim="?attr/colorPrimary"
+            app:statusBarScrim="?attr/colorPrimaryVariant">
+
+            <ImageButton
+                android:id="@+id/changeItemSrcPic"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="top|center"
+                android:adjustViewBounds="true"
+                android:background="@drawable/round_button"
+                android:scaleType="fitCenter"
+                android:src="@drawable/camera"
+                android:contentDescription="Change item image"
+                android:elevation="16dp"/>
+
+            <ImageView
+                android:id="@+id/imageViewItem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:fitsSystemWindows="true"
+                android:contentDescription="item image" />
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbarItemEdit"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:menu="@menu/top_app_bar_item_edit"
+                app:navigationIcon="@drawable/back_arrow"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                android:elevation="0dp"
+                android:background="@android:color/transparent"
+                app:layout_collapseMode="pin"/>
+            <!-- app:title="@string/item_details_title" -->
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Note: A RecyclerView can also be used -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- Scrollable content -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tfTitle"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="16dp"
+                android:hint="Title"
+                app:endIconMode="clear_text"
+                app:layout_constraintBottom_toTopOf="@+id/tfCategory"
+                app:layout_constraintEnd_toStartOf="@+id/tfPrice"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="spread_inside">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tIET_Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textShortMessage"
+                    android:text="@={itemd.title_value}"
+                />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tfDescription"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="Description"
+                app:endIconMode="clear_text"
+                app:layout_constraintBottom_toTopOf="@+id/tfLocation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tfCategory"
+                app:startIconContentDescription="Description">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tIET_Description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={itemd.description_value}"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tfPrice"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Price"
+                app:endIconMode="clear_text"
+                app:layout_constraintBottom_toBottomOf="@+id/tfTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tfTitle"
+                app:layout_constraintTop_toTopOf="@+id/tfTitle"
+                app:startIconContentDescription="Price">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tIET_Price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:text="@={itemd.price_value}"
+                   />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Spinner
+                android:id="@+id/tfCategory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="Category"
+                app:layout_constraintBottom_toTopOf="@+id/tfDescription"
+                app:layout_constraintEnd_toEndOf="@+id/tfTitle"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/tfTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tfTitle" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tfLocation"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="16dp"
+                android:hint="Location"
+                app:endIconMode="clear_text"
+                app:layout_constraintBottom_toTopOf="@+id/tfStatus"
+                app:layout_constraintEnd_toStartOf="@+id/tfExpiryDate"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tfDescription"
+                app:startIconContentDescription="Location">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tIET_Location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textShortMessage"
+                    android:text="@={itemd.location_value}"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tfExpiryDate"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Expiry Date"
+                app:endIconDrawable="@drawable/calendar"
+                app:endIconMode="custom"
+                app:layout_constraintBottom_toBottomOf="@+id/tfLocation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tfLocation"
+                app:layout_constraintTop_toTopOf="@+id/tfLocation"
+                app:startIconContentDescription="Expiry Date">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tIET_expiryDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tfStatus"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="Status"
+                app:layout_constraintBottom_toTopOf="@+id/tfBuyer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tfLocation"
+                app:startIconContentDescription="Status">
+
+                <AutoCompleteTextView
+                    android:id="@+id/actv_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageButton
+                android:id="@+id/googleButtonItem"
+                android:layout_width="43dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="92dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/white"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toTopOf="@+id/tfDescription"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/tfCategory"
+                app:srcCompat="@drawable/map" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tfBuyer"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="@string/buyer"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tfStatus"
+                app:startIconContentDescription="Status">
+
+                <AutoCompleteTextView
+                    android:id="@+id/actv_buyer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

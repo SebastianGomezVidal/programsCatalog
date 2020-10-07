@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="userd"
+            type="it.polito.mad.lab2.viewmodels.UserViewModel"/>
+    </data>
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".fragments.EditProfileFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:orientation="vertical"
+        android:layout_marginTop="?attr/actionBarSize">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="3">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="UselessParent">
+
+            <ImageView
+                android:id="@+id/editImageView"
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/profile_image"
+                android:src="@{userd.profileImg_value}" />
+                <!--android:src="" />-->
+
+            <ImageButton
+                android:id="@+id/srcPic"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="top|center"
+                android:adjustViewBounds="true"
+                android:background="@drawable/round_button"
+                android:scaleType="fitCenter"
+                android:src="@drawable/camera"
+                android:contentDescription="@string/change_image" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
+        <EditText
+            android:id="@+id/editFullName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:inputType="textPersonName"
+            android:textSize="30sp"
+            android:hint="@string/fullName_default"
+            android:text="@={userd.fullName_value}"/>
+            <!--android:text="@string/fullName_default"/>-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/editLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:autofillHints="Location"
+            android:hint="@string/location_default"
+            android:inputType="textPersonName"
+            android:text="@={userd.location_value}"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+            <!--android:text="@string/location_default"/>-->
+
+        <ImageButton
+            android:id="@+id/googleButton"
+            android:layout_width="73dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="24dp"
+            android:background ="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/map"
+            android:scaleType="fitXY"
+            android:contentDescription="@null" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/textUnderNumberTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="items bought"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tvNumberBought"
+                app:layout_constraintStart_toStartOf="@+id/tvNumberBought"
+                app:layout_constraintTop_toBottomOf="@+id/tvNumberBought" />
+            <TextView
+                android:id="@+id/textView4"
+                style="@style/textUnderNumberTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="out of 5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tvRating"
+                app:layout_constraintStart_toStartOf="@+id/tvRating"
+                app:layout_constraintTop_toBottomOf="@+id/tvRating" />
+            <TextView
+                android:id="@+id/tvNumberBought"
+                style="@style/highlightedTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/itemBoughtNumber_default"
+                app:layout_constraintBottom_toTopOf="@+id/textView3"
+                app:layout_constraintEnd_toStartOf="@+id/view"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+            <TextView
+                android:id="@+id/tvRating"
+                style="@style/highlightedTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/userRating_default"
+                app:layout_constraintBottom_toTopOf="@+id/textView4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/view"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+            <View
+                android:id="@+id/view"
+                android:layout_width="1dp"
+                android:layout_height="80dp"
+                android:background="#ffd6d6d6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tvRating"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvNumberBought"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/view2"
+            style="@style/horizonalLongLine"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/labelNickName"
+                style="@style/textViewLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="Nickname"
+                app:layout_constraintBottom_toTopOf="@+id/editNickName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+            <EditText
+                android:id="@+id/editNickName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:hint="@string/nickName_default"
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/labelNickName"
+                app:layout_constraintVertical_chainStyle="packed"
+                android:autofillHints="Nickname"
+                android:text="@={userd.nickName_value}"/>
+                <!--android:text="@string/nickName_default"/>-->
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/view3"
+            style="@style/horizonalLongLine"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/labelEmail"
+                style="@style/textViewLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="Email"
+                app:layout_constraintBottom_toTopOf="@+id/editEmail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/editEmail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginBottom="16dp"
+                android:hint="@string/email_default"
+                android:inputType="textEmailAddress"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/labelEmail"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/labelEmail"
+                android:text="@={userd.email_value}"/>
+                <!--android:text="@string/email_default"/>-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</LinearLayout>
+</layout>

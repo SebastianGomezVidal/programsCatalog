@@ -1,0 +1,79 @@
+<resources>
+
+    <!-- Drawer Toggle -->
+    <string name="nav_open_drawer">Open navigation drawer</string>
+    <string name="nav_close_drawer">Close navigation drawer</string>
+
+    <!-- Drawer Image Text -->
+    <string name="app_name">OBG Market</string>
+    <string name="nickname">Nickname</string>
+    <!-- Drawer-Navigation Options -->
+    <string name="nav_user">User</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_editProfile">Update Data</string>
+    <string name="nav_advertisements">Advertisements</string>
+    <string name="nav_adds">Your Adds</string>
+    <string name="nav_itemOnSale">Adds on Sale</string>
+    <string name="nav_itemOfInterestListFragment">Items of Interest</string>
+    <string name="nav_BoughtItemsListFragment">Bought items</string>
+    <string name="nav_support">Support</string>
+    <string name="nav_help">Help</string>
+    <string name="nav_feedback">Give us a feedback</string>
+    <!-- Navigation-Drawer  Options -->
+    <string name="menu_add">Advertisement</string>
+    <string name="menu_logOut">Log Out</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_editProfile">Edit Profile</string>
+    <!-- Item details, edit Options -->
+    <string name="edit_item">Edit Item</string>
+    <string name="item_details_title">Item</string>
+    <string name="save_item">Save Item</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+    <!-- Recycler view -->
+    <string name="no_data_available">EMPTY</string>
+
+
+    <!-- Navigation Drawer test -->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Full Name</string>
+    <string name="nav_header_subtitle">user@mail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="home_second">Home Second</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Show and Edit Profile Fragments -->
+    //Show profile screen
+    <string name="fullName_default">Full Name</string>
+    <string name="nickName_default">Nickname</string>
+    <string name="email_default">e-mail@address.it</string>
+    <string name="location_default">location</string>
+
+    //Alert - Dialog boxes
+    <string name="dialogal_t">Device Version</string>
+    <string name="dialogal_m">This device does not support an appropiate OS version, it must be
+                                greater or equal to LOLIIPOP</string>
+    <string name="ok">Understood</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="change_image">Change Image</string>
+    <string name="itemBoughtNumber_default">543</string>
+    <string name="userRating_default">4.7</string>
+    <string name="buyer">Buyer</string>
+
+    <string name="default_notification_channel_id">fcm_default_channel</string>
+    <string name="rate_the_seller">Rate the seller</string>
+    <string name="press_here_for_owner_info">Press here for owner info</string>
+    <string name="seller_rated">Seller Rated</string>
+
+    <string name="title_activity_maps">Map</string>
+    <string name="logo">OBG\'s MARKET</string>
+    <string name="search_title">Search Item</string>
+    <string name="search_hint">Search item</string>
+
+
+</resources>
